@@ -5,10 +5,11 @@ import { AuthMarketPlaceRepository } from '../dominio/auth-repository/auth-marke
 import { AuthRepository } from './repositories/auth-repository';
 import { SharedModule } from 'src/context/shared/shared.module';
 import { DatabaseModule } from './database/database.module';
+import { ProductsController } from './htt-api/products/products.controller';
 
 @Module({
   imports: [SharedModule, DatabaseModule],
-  controllers: [AuthController],
+  controllers: [AuthController, ProductsController],
   providers: [
     AuthUseCase,
     AuthRepository,

@@ -2,6 +2,9 @@ import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DatabaseConfig } from '../../../shared/config/database.config';
+import { UserEntity } from './entities/user.entity';
+import { RoleEntity } from './entities/role.entity';
+import { ProductEntity } from './entities/product.entity';
 
 @Module({
   imports: [
@@ -17,7 +20,7 @@ import { DatabaseConfig } from '../../../shared/config/database.config';
           username: database.user,
           password: database.password,
           database: database.name,
-          entities: [],
+          entities: [UserEntity, RoleEntity, ProductEntity],
           synchronize: database.environment !== 'prod',
           logging:
             database.environment !== 'prod' && process.env.NODE_ENV !== 'test',
