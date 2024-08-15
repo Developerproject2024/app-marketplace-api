@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.7](https://github.com/Developerproject2024/app-marketplace-api/compare/v0.0.6...v0.0.7) (2024-08-15)
+
+
+### Features
+
+* creation of user entities, products and roles ([4a5c8a0](https://github.com/Developerproject2024/app-marketplace-api/commit/4a5c8a07500336e68a547f47bce8b61fdd8dd1bb))
+
 ### [0.0.6](https://github.com/Developerproject2024/app-marketplace-api/compare/v0.0.5...v0.0.6) (2024-08-15)
 
 
