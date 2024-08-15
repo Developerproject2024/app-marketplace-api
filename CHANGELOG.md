@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://github.com/Developerproject2024/app-marketplace-api/compare/v0.0.5...v0.0.6) (2024-08-15)
+
+
+### Features
+
+* typeorm and postgres database configuration and domain layer creation ([d7040b1](https://github.com/Developerproject2024/app-marketplace-api/commit/d7040b1d0a437b12ec69fdb951f324b9adb331b8))
+
 ### [0.0.5](https://github.com/Developerproject2024/app-marketplace-api/compare/v0.0.4...v0.0.5) (2024-08-15)
 
 
