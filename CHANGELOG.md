@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/Developerproject2024/app-marketplace-api/compare/v0.0.4...v0.0.5) (2024-08-15)
+
+
+### Features
+
+* swagger configuration ([d576148](https://github.com/Developerproject2024/app-marketplace-api/commit/d576148ef8f1b116d2894e6d1b041fbcb29c0763))
+
 ### [0.0.4](https://github.com/Developerproject2024/app-marketplace-api/compare/v0.0.3...v0.0.4) (2024-08-15)
 
 
