@@ -1,4 +1,7 @@
 import { Module } from '@nestjs/common';
+import { AuthController } from './htt-api/auth/auth.controller';
 
-@Module({})
+@Module({
+  controllers: [AuthController],
+})
 export class MarkeplaceModule {}

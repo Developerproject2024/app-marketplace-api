@@ -4,6 +4,7 @@ import { Controller, Get } from '@nestjs/common';
 export class AuthController {
   @Get()
   async run() {
-    return 'Fabio';
+    console.log('***********INFRASTRUCTURE****************');
+    return 'Fabio arango';
   }
 }
