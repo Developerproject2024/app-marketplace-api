@@ -15,6 +15,10 @@ import { RoleEntity } from './database/entities/role.entity';
 import { ProductEntity } from './database/entities/product.entity';
 import { APP_FILTER } from '@nestjs/core';
 import { HttpExceptionFilter } from 'src/context/shared/interceptor/errors.interceptor';
+import { UsersController } from './htt-api/users/users.controller';
+import { UsersUseCase } from '../application/users-use-case/users-use-case';
+import { UsersMarketPlaceRepository } from '../dominio/users-repositor/users-marketplace-repository';
+import { UsersRepository } from './repositories/users-repository';
 
 @Module({
   imports: [
@@ -22,12 +26,14 @@ import { HttpExceptionFilter } from 'src/context/shared/interceptor/errors.inter
     DatabaseModule,
     TypeOrmModule.forFeature([UserEntity, RoleEntity, ProductEntity]),
   ],
-  controllers: [AuthController, ProductsController],
+  controllers: [AuthController, ProductsController, UsersController],
   providers: [
     AuthUseCase,
     ProductUseCase,
+    UsersUseCase,
     AuthRepository,
     ProductRepository,
+    UsersRepository,
     {
       provide: AuthMarketPlaceRepository,
       useExisting: AuthRepository,
@@ -37,10 +43,14 @@ import { HttpExceptionFilter } from 'src/context/shared/interceptor/errors.inter
       useExisting: ProductRepository,
     },
     {
+      provide: UsersMarketPlaceRepository,
+      useExisting: UsersRepository,
+    },
+    {
       provide: APP_FILTER,
       useClass: HttpExceptionFilter,
     },
   ],
-  exports: [AuthUseCase, ProductUseCase],
+  exports: [AuthUseCase, ProductUseCase, UsersUseCase],
 })
 export class MarkeplaceModule {}

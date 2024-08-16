@@ -1,8 +1,10 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { ProductUseCase } from '../../../application/product-use-case/product-use-case';
 import { CreateProductDto } from './create-product.dto';
+import { ApiTags } from '@nestjs/swagger';
 
 @Controller('products')
+@ApiTags('Products')
 export class ProductsController {
   constructor(private readonly productUseCase: ProductUseCase) {}
   @Post('create')
