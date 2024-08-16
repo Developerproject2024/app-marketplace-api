@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.8](https://github.com/Developerproject2024/app-marketplace-api/compare/v0.0.7...v0.0.8) (2024-08-16)
+
+
+### Features
+
+* flow is created to create and consult all products ([ddd2b3d](https://github.com/Developerproject2024/app-marketplace-api/commit/ddd2b3d67202b6b7ebb40fe6cf65522c0190a66f))
+
 ### [0.0.7](https://github.com/Developerproject2024/app-marketplace-api/compare/v0.0.6...v0.0.7) (2024-08-15)
 
 
