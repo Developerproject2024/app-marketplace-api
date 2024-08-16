@@ -12,7 +12,6 @@ import { ProductEntity } from './entities/product.entity';
     TypeOrmModule.forRootAsync({
       useFactory: async (config: ConfigService) => {
         const database = config.get<DatabaseConfig>('database');
-        console.log('database', database);
         return {
           type: 'postgres',
           host: database.host,

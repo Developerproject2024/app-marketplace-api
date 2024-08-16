@@ -1,4 +1,10 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  ManyToOne,
+  JoinColumn,
+} from 'typeorm';
 import { UserEntity } from './user.entity';
 
 @Entity('productos')
@@ -19,5 +25,6 @@ export class ProductEntity {
   price: number;
 
   @ManyToOne(() => UserEntity, (user) => user.product)
+  @JoinColumn({ name: 'userId' })
   user: UserEntity;
 }
