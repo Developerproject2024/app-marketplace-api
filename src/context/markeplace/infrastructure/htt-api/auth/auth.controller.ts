@@ -1,17 +1,21 @@
-import { Controller, Post } from '@nestjs/common';
+import { Body, Controller, Post } from '@nestjs/common';
 import { AuthUseCase } from '../../../application/auth-use-case/auth-use-case';
 import {
   ApiOperation,
   ApiProduces,
   ApiResponse,
+  ApiSecurity,
   ApiTags,
 } from '@nestjs/swagger';
+import { LoginCredentialsDto } from './LoginCredentials.dto';
+import { Public } from '../../../../guards/auth.guard';
 
-@Controller('auth')
 @ApiTags('Auth')
+@ApiSecurity('api-key')
+@Controller('auth')
 export class AuthController {
   constructor(private authUseCase: AuthUseCase) {}
-
+  @Public()
   @Post('authentication')
   @ApiProduces('application/json')
   @ApiOperation({
@@ -20,7 +24,7 @@ export class AuthController {
   @ApiProduces('application/json')
   @ApiResponse({
     status: 200,
-    description: 'user authentication',
+    description: 'create product',
   })
   @ApiResponse({
     status: 401,
@@ -30,8 +34,7 @@ export class AuthController {
     status: 500,
     description: 'Internal server error.',
   })
-  async run() {
-    console.log('***********INFRASTRUCTURE****************');
-    return this.authUseCase.execute();
+  async authentication(@Body() loginCredentialsDto: LoginCredentialsDto) {
+    return this.authUseCase.authentication(loginCredentialsDto);
   }
 }

@@ -3,7 +3,7 @@ import { IsString, IsNumber, IsNotEmpty } from 'class-validator';
 
 export class CreateProductDto {
   @ApiProperty({
-    description: 'The SKU (Stock Keeping Unit) of the product',
+    description: 'Name of the product',
     example: 'ABC123',
   })
   @IsString()
@@ -11,32 +11,32 @@ export class CreateProductDto {
   name: string;
 
   @ApiProperty({
-    description: 'The SKU (Stock Keeping Unit) of the product',
-    example: 'ABC123',
+    description: 'The Sku of the product',
+    example: 'ABC123-120',
   })
   @IsString()
   @IsNotEmpty()
   sku: string;
 
   @ApiProperty({
-    description: 'The SKU (Stock Keeping Unit) of the product',
-    example: 'ABC123',
+    description: 'The Price of the product',
+    example: 1500,
   })
   @IsNumber()
   @IsNotEmpty()
   price: number;
 
   @ApiProperty({
-    description: 'The SKU (Stock Keeping Unit) of the product',
-    example: 'ABC123',
+    description: 'The Amount of the product',
+    example: 10,
   })
   @IsNumber()
   @IsNotEmpty()
   amount: number;
 
   @ApiProperty({
-    description: 'The SKU (Stock Keeping Unit) of the product',
-    example: 'ABC123',
+    description: 'Product seller userId',
+    example: 1,
   })
   @IsNumber()
   @IsNotEmpty()

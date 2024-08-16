@@ -3,15 +3,15 @@ import { IsString, IsNotEmpty, IsEmail } from 'class-validator';
 
 export class CreateUserDto {
   @ApiProperty({
-    description: 'The SKU (Stock Keeping Unit) of the product',
-    example: 'ABC123',
+    description: 'email to register',
+    example: 'prueba@prueba.com',
   })
   @IsEmail()
   @IsNotEmpty()
   email: string;
 
   @ApiProperty({
-    description: 'The SKU (Stock Keeping Unit) of the product',
+    description: 'New password',
     example: 'ABC123',
   })
   @IsString()
@@ -19,7 +19,7 @@ export class CreateUserDto {
   password_new: string;
 
   @ApiProperty({
-    description: 'The SKU (Stock Keeping Unit) of the product',
+    description: 'Password confirm',
     example: 'ABC123',
   })
   @IsString()

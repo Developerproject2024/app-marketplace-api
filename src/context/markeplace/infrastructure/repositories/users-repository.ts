@@ -4,6 +4,7 @@ import { UsersMarketPlaceRepository } from '../../dominio/users-repositor/users-
 import { UserEntity } from '../database/entities/user.entity';
 import * as bcrypt from 'bcrypt';
 import { RoleEntity } from '../database/entities/role.entity';
+import { IUser } from '../../application/users-use-case/users.dto';
 
 export class UsersRepository extends UsersMarketPlaceRepository {
   private readonly saltRounds = 10;
@@ -16,7 +17,7 @@ export class UsersRepository extends UsersMarketPlaceRepository {
     super();
   }
 
-  async create(user: any): Promise<[] | any> {
+  async create(user: IUser): Promise<[] | any> {
     const { email, password_new, password_confirmation } = user;
     if (password_new !== password_confirmation) {
       return {

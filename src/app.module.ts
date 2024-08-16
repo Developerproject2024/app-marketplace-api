@@ -1,22 +1,20 @@
 import { Module } from '@nestjs/common';
-import { JwtModule } from '@nestjs/jwt';
 import { MarkeplaceModule } from './context/markeplace/infrastructure/markeplace.module';
-import { APP_FILTER } from '@nestjs/core';
+import { APP_FILTER, APP_GUARD } from '@nestjs/core';
 import { HttpExceptionFilter } from './context/shared/interceptor/errors.interceptor';
+import { ApiKeyGuard } from './context/guards/api-key.guard';
 
 @Module({
-  imports: [
-    MarkeplaceModule,
-    JwtModule.register({
-      secret: 'your-secret-key', // Mejor guardarlo en una variable de entorno
-      signOptions: { expiresIn: '60m' }, // Configura el tiempo de expiración del token
-    }),
-  ],
+  imports: [MarkeplaceModule],
   controllers: [],
   providers: [
     {
       provide: APP_FILTER,
       useClass: HttpExceptionFilter,
+    },
+    {
+      provide: APP_GUARD,
+      useClass: ApiKeyGuard,
     },
   ],
 })

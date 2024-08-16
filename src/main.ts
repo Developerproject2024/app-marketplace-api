@@ -11,6 +11,14 @@ async function bootstrap() {
     .setTitle('API MarketPlace')
     .setDescription('The API description')
     .setVersion('1.0')
+    .addBearerAuth(
+      { type: 'http', scheme: 'bearer', bearerFormat: 'JWT' },
+      'jwt-token',
+    )
+    .addApiKey(
+      { type: 'apiKey', name: 'x-api-key', in: 'header' }, // Configuración de API key
+      'api-key', // Identificador del esquema
+    )
     .build();
   const document = SwaggerModule.createDocument(app, swagger);
   SwaggerModule.setup('api/swagger', app, document);
