@@ -8,7 +8,7 @@ import {
   ApiSecurity,
   ApiTags,
 } from '@nestjs/swagger';
-import { AuthGuard } from '../../../../guards/auth.guard';
+import { AuthGuard, Public } from '../../../../guards/auth.guard';
 import { RolesGuard } from '../../../../guards/roles.guard';
 import { Roles } from '../../../../decorators/roles.decorator';
 
@@ -41,7 +41,7 @@ export class ProductsController {
     return this.productUseCase.execute(createProductDto);
   }
 
-  @Roles('administrador')
+  @Public()
   @Get()
   @ApiOperation({
     summary: 'Consult product',

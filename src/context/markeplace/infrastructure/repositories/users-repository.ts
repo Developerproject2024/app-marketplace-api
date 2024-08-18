@@ -38,6 +38,6 @@ export class UsersRepository extends UsersMarketPlaceRepository {
       return await this.repository.save(userEntity);
     }
 
-    return userExist;
+    return { message: 'Este usuario ya existe prueba con otro' };
   }
 }

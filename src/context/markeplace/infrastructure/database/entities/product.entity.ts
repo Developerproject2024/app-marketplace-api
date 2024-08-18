@@ -21,7 +21,7 @@ export class ProductEntity {
   @Column('int')
   amount: number;
 
-  @Column('decimal')
+  @Column('int')
   price: number;
 
   @ManyToOne(() => UserEntity, (user) => user.product)
