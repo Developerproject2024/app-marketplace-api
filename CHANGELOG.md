@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.11](https://github.com/Developerproject2024/app-marketplace-api/compare/v0.0.10...v0.0.11) (2024-08-18)
+
+
+### Features
+
+* code refactoring ([9eca0a5](https://github.com/Developerproject2024/app-marketplace-api/commit/9eca0a5b61adc2787c2727423c7b49d56efe98e9))
+* product creation refactoring ([b193def](https://github.com/Developerproject2024/app-marketplace-api/commit/b193deff4700ecd83c58b560c4df86dc3d55299c))
+
 ### [0.0.10](https://github.com/Developerproject2024/app-marketplace-api/compare/v0.0.9...v0.0.10) (2024-08-16)
 
 
