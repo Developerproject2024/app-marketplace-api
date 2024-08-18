@@ -27,9 +27,25 @@ export class ProductRepository extends ProductMarketPlaceRepository {
     }
 
     const productEntity = this.repository.create({ ...data, user });
-    return await this.repository.save(productEntity);
+    await this.repository.save(productEntity);
+    return await this.findAllByUser(userId);
   }
   async findAll(): Promise<ICProducts[] | any[]> {
-    return await this.repository.find({ relations: ['user'] });
+    return await this.repository.find({
+      relations: ['user'],
+      order: {
+        id: 'DESC',
+      },
+    });
+  }
+
+  async findAllByUser(userId: number): Promise<ICProducts[] | any> {
+    return await this.repository.find({
+      where: { user: { id: userId } },
+      relations: ['user'],
+      order: {
+        id: 'DESC',
+      },
+    });
   }
 }
